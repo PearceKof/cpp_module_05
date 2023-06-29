@@ -11,51 +11,45 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main()
+int main( void )
 {
-	std::cout << "----test 1: grade too high----" << std::endl;
+
+    try
+    {
+        Bureaucrat bureaucrat("Bob",11);
+        Form form("formName", 10);
+
+        std::cout << form << std::endl;
+
+        bureaucrat.signForm(form);
+        bureaucrat.incrementGrade();
+        bureaucrat.signForm(form);
+
+        std::cout << form << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+	std::cout << "----test 1: grade too low-----" << std::endl;
     try
 	{
-        Bureaucrat bob("Bob", 1);
-
-        std::cout << bob << std::endl;
-
-        bob.incrementGrade();
+        Form form("formName", 1000);
     }
-	catch (Bureaucrat::GradeTooHighException& e)
+	catch (Form::GradeTooLowException& e)
 	{
         std::cout << e.what() << std::endl;
     }
 
-	std::cout << "\n----test 2: grade too low-----" << std::endl;
+	std::cout << "\n----test 2: grade too high---" << std::endl;
 	try
 	{
-        Bureaucrat bib("Bib", 150);
-
-        std::cout << bib << std::endl;
-
-        bib.decrementGrade();
+        Form form("formName", 0);
     }
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-        std::cout << e.what() << std::endl;
-    }
-
-	std::cout << "\n----test 3: grade is fine-----" << std::endl;
-	try
-	{
-        Bureaucrat bab("bab", 100);
-
-        std::cout << bab << std::endl;
-
-        bab.decrementGrade();
-		std::cout << "src: " << bab << std::endl;
-		
-		Bureaucrat cpy(bab);
-		std::cout << "cpy: " << cpy << std::endl;
-    }
-	catch (std::exception& e)
+	catch (Form::GradeTooHighException& e)
 	{
         std::cout << e.what() << std::endl;
     }
