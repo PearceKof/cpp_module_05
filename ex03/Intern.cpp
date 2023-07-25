@@ -6,7 +6,7 @@
 /*   By: blaurent <blaurent@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:24:57 by blaurent          #+#    #+#             */
-/*   Updated: 2023/06/26 17:52:05 by blaurent         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:59:39 by blaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 	int i(0);
 	std::string form[] = {"robotomy request", "srubbery creation", "presidential pardon"};
 
-	for(i = 0; i < 3 ; i++)
+	for(i = 0 ; i < 3 ; i++)
 	{
 		if (formName.compare(form[i]))
 			break;

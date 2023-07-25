@@ -20,8 +20,8 @@
 #include <iostream> // cerr
 
 
-int	main(void) {
-
+int	main()
+{
 	srand(time(0));
 
 	try
@@ -44,12 +44,9 @@ int	main(void) {
 		bob.signForm(sc);
 		bob.executeForm(sc);
 	}
-	catch (std::exception& e) {
-
+	catch (std::exception& e)
+	{
 		std::cerr << "Error : " << e.what() << std::endl;
 	}
-
-
-
 	return 0;
 }

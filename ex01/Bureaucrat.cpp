@@ -43,6 +43,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
 	return (*this);
 }
 
+
+
 std::string Bureaucrat::getName() const
 {
 	return (this->name);
@@ -52,6 +54,8 @@ int Bureaucrat::getGrade() const
 {
 	return (this->grade);
 }
+
+
 
 void Bureaucrat::incrementGrade()
 {
@@ -67,11 +71,15 @@ void Bureaucrat::decrementGrade()
 	this->grade++;
 }
 
+
+
 std::ostream& operator<<(std::ostream& output, const Bureaucrat& src)
 {
 	output << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";
 	return (output);
 }
+
+
 
 void	Bureaucrat::signForm(Form& formToSign)
 {
