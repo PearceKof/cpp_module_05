@@ -6,7 +6,7 @@
 /*   By: blaurent <blaurent@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:24:57 by blaurent          #+#    #+#             */
-/*   Updated: 2023/07/25 17:59:39 by blaurent         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:51:26 by blaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Intern&	Intern::operator=(const Intern& src)
     return (*this);
 }
 
-Form	*Intern::makeForm(std::string formName, std::string target)
+AForm	*Intern::makeForm(std::string formName, std::string target)
 {
 	int i(0);
 	std::string form[] = {"robotomy request", "srubbery creation", "presidential pardon"};

@@ -12,11 +12,11 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& _target) : Form("Shrubbery Creation Form", 145, 137), target(_target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& _target) : AForm("Shrubbery Creation Form", 145, 137), target(_target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src) : Form(src)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src) : AForm(src)
 {
 	*this = src;
 }
@@ -29,7 +29,7 @@ ShrubberyCreationForm&   	ShrubberyCreationForm::operator=(const ShrubberyCreati
 {
 	if (this != &src)
 	{
-		this->Form::operator=(src);
+		this->AForm::operator=(src);
 		this->target = src.target;
 	}
 	return (*this);

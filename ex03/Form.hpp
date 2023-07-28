@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	const std::string	name;
 	bool				isSigned;
 	const int			gradeToSign;
 	const int			gradeToExecute;
-	Form();
+	AForm();
 public:
-    Form(const std::string& _name, int _gradeToSign, int _gradeToExecute);
-	Form(const Form& src);
-	~Form();
+    AForm(const std::string& _name, int _gradeToSign, int _gradeToExecute);
+	AForm(const AForm& src);
+	~AForm();
 
-	Form&		operator=(const Form& src);
+	AForm&		operator=(const AForm& src);
 
 	std::string	getName() const;
 	int			getGradeToSign() const;

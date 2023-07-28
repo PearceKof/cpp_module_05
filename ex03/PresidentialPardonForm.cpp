@@ -12,11 +12,11 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& _target) : Form("Presidential Pardon Form", 25, 5), target(_target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string& _target) : AForm("Presidential Pardon Form", 25, 5), target(_target)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& src) : Form(src)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& src) : AForm(src)
 {
 	*this = src;
 }
@@ -29,7 +29,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 {
     if (this != &src)
 	{
-		this->Form::operator=(src);
+		this->AForm::operator=(src);
 		this->target = src.target;
 	}
     return (*this);

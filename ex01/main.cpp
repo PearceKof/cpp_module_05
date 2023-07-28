@@ -31,7 +31,7 @@ int main( void )
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "----test 1: grade too low-----" << std::endl;
@@ -41,7 +41,7 @@ int main( void )
     }
 	catch (Form::GradeTooLowException& e)
 	{
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "\n----test 2: grade too high---" << std::endl;
@@ -51,7 +51,7 @@ int main( void )
     }
 	catch (Form::GradeTooHighException& e)
 	{
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "\nEnd of program.\n" << std::endl;
