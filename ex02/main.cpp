@@ -15,9 +15,8 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-#include <cstdlib> // srand
-#include <ctime> // time
-#include <iostream> // cerr
+#include <cstdlib>
+#include <ctime>
 
 
 int	main()
@@ -46,7 +45,7 @@ int	main()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "Error : " << e.what() << std::endl;
+		std::cerr << "Exception catched: " << e.what() << std::endl;
 	}
 	return 0;
 }

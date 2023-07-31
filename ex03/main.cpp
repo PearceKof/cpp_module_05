@@ -15,41 +15,30 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-#include <cstdlib> // srand
-#include <ctime> // time
-#include <iostream> // cerr
+#include "AForm.hpp"
+#include "Intern.hpp"
+#include <iostream>
 
+int main(void)
+{
+	Intern randomIntern;
 
-int	main(void) {
+	AForm* form1 = randomIntern.makeForm("presidential pardon", "dog");
+	AForm* form2 = randomIntern.makeForm("robotomy request", "cat");
+	AForm* form3 = randomIntern.makeForm("shrubbery creation", "fish");
+	AForm* form4 = randomIntern.makeForm("test", "no");
 
-	srand(time(0));
+	if (form1)
+		std::cout << form1->getName() << " exist." << std::endl;
+	if (form2)
+		std::cout << form2->getName() << " exist." << std::endl;
+	if (form3)
+		std::cout << form3->getName() << " exist." << std::endl;
+	if (form4)
+		std::cout << form4->getName() << " exist." << std::endl;
 
-	try
-	{
-		Bureaucrat				bob("Robert", 24);
-
-		PresidentialPardonForm	pp("Larry");
-		std::cout << pp << std::endl;
-		RobotomyRequestForm		rr("Henry");
-		std::cout << rr << std::endl;
-		ShrubberyCreationForm	sc("Living_room");
-		std::cout << sc << std::endl;
-
-		bob.signForm(pp);
-		bob.executeForm(pp);
-
-		bob.signForm(rr);
-		bob.executeForm(rr);
-
-		bob.signForm(sc);
-		bob.executeForm(sc);
-	}
-	catch (std::exception& e) {
-
-		std::cerr << "Error : " << e.what() << std::endl;
-	}
-
-
-
-	return 0;
+	delete form1;
+	delete form2;
+	delete form3;
+	delete form4;
 }

@@ -29,7 +29,7 @@ private:
 public:
     AForm(const std::string& _name, int _gradeToSign, int _gradeToExecute);
 	AForm(const AForm& src);
-	~AForm();
+	virtual ~AForm();
 
 	AForm&		operator=(const AForm& src);
 
@@ -60,6 +60,6 @@ public:
 	};
 };
 
-std::ostream& operator<<(std::ostream& output, const Form& src);
+std::ostream& operator<<(std::ostream& output, const AForm& src);
 
 #endif

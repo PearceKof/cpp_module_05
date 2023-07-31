@@ -25,7 +25,7 @@ int main()
     }
 	catch (Bureaucrat::GradeTooHighException& e)
 	{
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "\n----test 2: grade too low-----" << std::endl;
@@ -39,7 +39,7 @@ int main()
     }
 	catch (Bureaucrat::GradeTooLowException& e)
 	{
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "\n----test 3: grade is fine-----" << std::endl;
@@ -57,7 +57,7 @@ int main()
     }
 	catch (std::exception& e)
 	{
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception catched: " << e.what() << std::endl;
     }
 
 	std::cout << "\nEnd of program.\n" << std::endl;

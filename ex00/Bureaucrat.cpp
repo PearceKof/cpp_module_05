@@ -12,16 +12,13 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Employee"), grade(150)
-{
-}
-
 Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grade)
 {
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+	// std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name), grade(src.grade)

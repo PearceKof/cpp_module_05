@@ -12,11 +12,11 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& _target) : Form("Shrubbery Creation Form", 145, 137), target(_target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& _target) : AForm("Shrubbery Creation Form", 145, 137), target(_target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src) : Form(src)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src) : AForm(src)
 {
 	*this = src;
 }
@@ -29,7 +29,7 @@ ShrubberyCreationForm&   	ShrubberyCreationForm::operator=(const ShrubberyCreati
 {
 	if (this != &src)
 	{
-		this->Form::operator=(src);
+		this->AForm::operator=(src);
 		this->target = src.target;
 	}
 	return (*this);
@@ -42,18 +42,25 @@ std::string	ShrubberyCreationForm::getTarget()
 
 void	ShrubberyCreationForm::doAction() const
 {
-	std::string	filename(this->getName() + "_shrubbery");
-	std::ofstream	file(filename.c_str());
+	try
+	{
+		std::string	filename(this->getName() + "_shrubbery");
+		std::ofstream	file(filename.c_str());
 
-	file << "               .0000000." << std::endl;
-	file << "       ,,,.   ,000000000,  .oo8888o." << std::endl;
-	file << "    ,&%%&%&&%,00000/000000,8888&88&8o" << std::endl;
-	file << "   ,%&&%&&%&&%,000&000/00088&88888&88'" << std::endl;
-	file << "   %&&%&%&/%&&%00&00/ /00088888&88888'" << std::endl;
-	file << "   %&&%& %&%%&&00& V /00' `88&8 `/88'" << std::endl;
-	file << "   `&%& ` /%&'    |.|       |  '|8'" << std::endl;
-	file << "       |o|        | |       |*-*|" << std::endl;
-	file << "       |.|        | |      /|   |" << std::endl;
-	file << "       | |        | |       |   |" << std::endl;
-	file.close();
+		file << "               .0000000." << std::endl;
+		file << "       ,,,.   ,000000000,  .oo8888o." << std::endl;
+		file << "    ,&%%&%&&%,00000/000000,8888&88&8o" << std::endl;
+		file << "   ,%&&%&&%&&%,000&000/00088&88888&88'" << std::endl;
+		file << "   %&&%&%&/%&&%00&00/ /00088888&88888'" << std::endl;
+		file << "   %&&%& %&%%&&00& V /00' `88&8 `/88'" << std::endl;
+		file << "   `&%& ` /%&'    |.|       |  '|8'" << std::endl;
+		file << "       |o|        | |       |*-*|" << std::endl;
+		file << "       |.|        | |      /|   |" << std::endl;
+		file << "       | |        | |       |   |" << std::endl;
+		file.close();
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
 }

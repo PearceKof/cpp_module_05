@@ -12,28 +12,23 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Employee"), grade(150)
-{
-	std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
-}
-
 Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grade)
 {
 	if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (this->grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
+	// std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name), grade(src.grade)
 {
-	std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
+	// std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << this->name << " destroyed." << std::endl;
+	// std::cout << this->name << " destroyed." << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
@@ -94,7 +89,7 @@ void	Bureaucrat::signForm(Form& formToSign)
 		}
 		catch(Form::GradeTooLowException &e)
 		{
-			std::cout << this->name << " couldn't sign " << formToSign.getName() << " because its grade " << e.what() << std::endl;
+			std::cout << this->name << " couldn't sign " << formToSign.getName() << " because " << e.what() << std::endl;
 		}
 	}
 }

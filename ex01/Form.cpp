@@ -12,24 +12,12 @@
 
 #include "Form.hpp"
 
-Form::Form() : name("Form"), isSigned(false), gradeToSign(150), gradeToExecute(150)
-{
-}
-
-Form::Form(const std::string& _name, int _gradeToSign) : name(_name), isSigned(false), gradeToSign(_gradeToSign), gradeToExecute(150)
-{
-	if ( gradeToSign < 1 )
-        throw Form::GradeTooHighException();
-    if ( gradeToSign > 150 )
-        throw Form::GradeTooLowException();
-}
-
 Form::Form(const std::string& _name, int _gradeToSign, int _gradeToExecute) : name(_name), isSigned(false), gradeToSign(_gradeToSign), gradeToExecute(_gradeToExecute)
 {
-	if ( gradeToSign < 1 )
-        throw Form::GradeTooHighException();
-    if ( gradeToSign > 150 )
-        throw Form::GradeTooLowException();
+	if (gradeToSign < 1 || gradeToSign < 1)
+		throw Form::GradeTooHighException();
+	if (gradeToSign > 150 || gradeToSign > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(const Form& src) : name(src.name), isSigned(src.isSigned), gradeToSign(src.gradeToSign), gradeToExecute(src.gradeToExecute)

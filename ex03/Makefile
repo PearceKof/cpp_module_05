@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= thatsALotOfForms
-SRCS	= main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+NAME	= intern
+SRCS	= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 	
 CC         = c++
 FLAGS    = -Wall -Wextra -Werror -std=c++98

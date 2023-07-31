@@ -12,11 +12,11 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& _target) : Form("Robotomy Request Form", 72, 45), target(_target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& _target) : AForm("Robotomy Request Form", 72, 45), target(_target)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src) : Form(src)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src) : AForm(src)
 {
 	*this = src;
 }
@@ -29,7 +29,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 {
 	if (this != &src)
 	{
-		this->Form::operator=(src);
+		this->AForm::operator=(src);
 		this->target = src.target;
 	}
 	return (*this);

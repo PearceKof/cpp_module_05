@@ -25,9 +25,8 @@ private:
 	bool				isSigned;
 	const int			gradeToSign;
 	const int			gradeToExecute;
-public:
 	Form();
-	Form(const std::string& _name, int _gradeToSign);
+public:
     Form(const std::string& _name, int _gradeToSign, int _gradeToExecute);
 	Form(const Form& src);
 	~Form();
@@ -38,6 +37,7 @@ public:
 	int			getGradeToSign() const;
 	int			getGradeToExecute() const;
 	bool		isItSigned() const;
+
 	void		beSigned(const Bureaucrat& signer);
 
 	class GradeTooHighException : public std::exception
