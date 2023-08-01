@@ -21,8 +21,8 @@ class RobotomyRequestForm : public AForm
 private:
 	std::string target;
 	void doAction() const;
-public:
 	RobotomyRequestForm();
+public:
 	RobotomyRequestForm(const std::string& target);
 	RobotomyRequestForm(const RobotomyRequestForm& src);
 	~RobotomyRequestForm();
