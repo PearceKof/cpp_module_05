@@ -23,10 +23,12 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name), grade(_grad
 
 Bureaucrat::Bureaucrat(const Bureaucrat& src) : name(src.name), grade(src.grade)
 {
+	// std::cout << this->name << " created with the grade " << this->grade << "." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	// std::cout << this->name << " destroyed." << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src)
